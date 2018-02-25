@@ -43,7 +43,7 @@ The goals / steps of this project are the following:
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
 
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb) ИЛЬЯ, ДОРОГОЙ, ЗАМЕНИ ЭТО ССЫЛКОЙ НА СВОЙ КОД
+You're reading it! and here is a link to my [project code](https://github.com/ishipachev/UdacitySDCND-CarND-Traffic-Sign-Classifier-P2/blob/master/Traffic_Sign_Classifier.ipynb)
 
 ### Data Set Summary & Exploration
 
@@ -110,14 +110,14 @@ My final model consisted of the following layers:
 
 #### 3. Describe how you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
-To train the model, I used an AdamPotimizer with learning rate equals 0.001, batch size equals 512. Training was done through 100 epochs.
+To train the model, I used an AdamPotimizer with learning rate equals 0.001, batch size equals 512. Training was done through 50 epochs.
 
 #### 4. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of 0.999.
-* validation set accuracy of 0.962.
-* test set accuracy of 0.942
+* training set accuracy of 0.992.
+* validation set accuracy of 0.951.
+* test set accuracy of 0.930
 
 Well know architecture LeNet was chosen as a model for final solution:
 * LeNet architecture as a simple and effective tool to clasiffy small pictures to small amount of classes. 
@@ -143,20 +143,20 @@ Here is prediction results printed as a title for each picture:
 
 ![alt text][custom_pics_results]
 
-The model was able to correctly guess 7 of the 9 traffic signs, which gives an accuracy of 0.77%. This is good result with taking into account task to detect numbers with the same network which is trying to sort out signs classes even without numbers.
+The model was able to correctly guess 8 of the 9 traffic signs, which gives an accuracy of 0.88%. This is good result with taking into account task to detect numbers with the same network which is trying to sort out signs classes even without numbers.
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook. 
-For the first image, the model is relatively sure that this is a 30km/h speed limit (probability of 0.575), and the image does contain a stop limit, but 50km/h. The top five soft max probabilities for the first image were
+For the first image, the model is relatively sure that this is a 50km/h speed limit (probability of 0.575), and the image does contain a stop limit, but 50km/h. The top five soft max probabilities for the first image were
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-|0.575 | Speed limit (30km/h)
-|0.425 | Speed limit (50km/h)
+|0.986 | Speed limit (50km/h)
+|0.014 | Speed limit (30km/h)
 |0.000 | Speed limit (70km/h)
+|0.000 | Speed limit (20km/h)
 |0.000 | Speed limit (60km/h)
-|0.000 | Stop
 
 For the second image probabilities were
 
@@ -165,7 +165,7 @@ For the second image probabilities were
 |1.000 | General caution
 |0.000 | Traffic signals
 |0.000 | Pedestrians
-|0.000 | Speed limit (70km/h)
+|0.000 | Right-of-way at the next intersection
 |0.000 | Road narrows on the right
 
 For the third image:
@@ -175,28 +175,28 @@ For the third image:
 |1.000 | Keep right
 |0.000 | Turn left ahead
 |0.000 | Go straight or right
-|0.000 | Ahead only
 |0.000 | Yield
+|0.000 | End of all speed and passing limits
 
 Forth:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-|0.907 | Traffic signals
-|0.075 | Bumpy road
-|0.009 | General caution
-|0.007 | Road work
-|0.001 | Stop
+|1.000 | Stop
+|0.000 | No vehicles
+|0.000 | Speed limit (60km/h)
+|0.000 | Yield
+|0.000 | Speed limit (80km/h)
 
 Fifth:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-|1.000 | Stop
-|0.000 | No vehicles
-|0.000 | Yield
-|0.000 | Road work
-|0.000 | No passing
+|0.760 | Traffic signals
+|0.237 | General caution
+|0.001 | Road work
+|0.001 | Pedestrians
+|0.000 | Bumpy road
 
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
